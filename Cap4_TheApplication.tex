@@ -1,0 +1,46 @@
+% bliotecaSalamanca.JPG---------------------------------------------------
+%
+% Trabajo de Fin de Grado. 
+% Author: Laura Padrón Jorge. 
+% Capítulo: La aplicacion BulletPoint. 
+% Fichero: Cap4_TheApplication.tex
+%
+% ----------------------------------------------------
+%
+
+\chapter{La aplicación BulletPoint} \label{chap:LaAplicacion} 
+
+Basándonos en los casos de uso revisados en el capítulo anterior, en este capítulo se discutirán los casos de uso que han sido elegidos e implementados en la aplicación \BulletPoint{}. Comentaremos la aplicación centrándonos en el desarrollo de la misma, así como  en diferentes partes a destacar del código que puedan resultar interesantes.
+
+
+\section{Casos de uso elegidos}
+
+Como ya hemos mencionado previamente, estos casos de uso se incluyen como parte de la aplicación que se ha desarrollado en este TFG, donde cada caso de uso se considera un módulo. La integración de cada uno de estos módulos con el resto de la aplicación se ha realizado mediante el desarrollo de un menú de funcionalidades donde es posible seleccionar qué acción se desea. Para almacenar la información necesaria para algunos módulos, se ha introducido un menú adicional de ajustes. Estos datos se utilizan entre otras cosas para identificar al usuario y confirmar ciertas acciones o dejar constancia de otras. 
+
+
+\subsubsection{Funcionamiento}
+
+
+Mediante el uso de los beacons, permitimos a la aplicación identificar en que parada se encuentra el usuario. La aplicación asocia la MAC \ref{el:mac} de un beacon con el número identificativo de la parada. Este número identificativo de la parada es lo que utiliza TITSA para identificar sus paradas en la API y en toda su web. 
+
+
+La aplicación ha sido programada enlazando los números identificativos de la parada con la dirección MAC de los beacons. En el listado \ref{code:beaconbusstop} se puede apreciar como se relaciona cada MAC con el número identificativo de la parada.
+
+
+\lstinputlisting[float, floatplacement=H,caption={\textit{BusBeaconStop}. Esta clase contiene la información que asocia cada MAC con el ID de la parada de TITSA. Añadir un nuevo beacon a una parada implica añadir un nuevo elemento a \textit{stopsMapId}.}, label={code:beaconbusstop}]
+{listings/BeaconBusStop.java} %% LISTING
+
+
+Aparte de esta información, por cada autobús se incluye un enlace a modo de botón que remite al usuario a la página web de TITSA con el identificador de la línea. Así el usuario puede obtener más información adicional en caso de precisarla.
+
+\lstinputlisting[float, floatplacement=H, caption={La clase \textit{Arrival} donde quedan contenidos los datos de cada llegada.}, label={code:arrival}]
+{listings/Arrival.java} %% LISTING
+
+\vspace{5mm}
+\lstinputlisting[float, floatplacement=H,caption={El handler se encarga de transformar el fichero XML en elementos de tipo \textit{Arrival} (véase Listado \ref{code:arrival}).}, label={code:handler}]
+{listings/XmlHandler.java} %% LISTING
+
+
+
+
+

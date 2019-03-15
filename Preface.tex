@@ -1,0 +1,21 @@
+% ---------------------------------------------------
+%
+% Proyecto de Final de Carrera: 
+% Author: Javier Alberto Martín <alu0100836400@ull.edu.es>
+% Introducción
+% Fichero: Prologo.tex
+%
+% ----------------------------------------------------
+
+\chapter*{Prólogo}
+\addcontentsline{toc}{chapter}{Prólogo} 
+
+Este documento comprende el trabajo de investigación y desarrollo realizado por el alumno en la consecución de su Trabajo de Fin de Grado (TFG), con el que culminará sus estudios del Grado en Ingeniería Informática cursados en la Escuela Superior de Ingeniería y Tecnología (ESIT) de la Universidad de la Laguna (ULL).
+
+El trabajo propuesto se enmarca dentro de la etapa final del desarrollo del sistema de control software destinado al instrumento científico MIRADAS, el cual se instalará en el Gran Telescopio Canarias (GTC), situado en el observatorio del Roque de Los Muchachos (ORM) en isla de La Palma. Este telescopio posee un espejo primario formado por 36 segmentos hexagonales que actúan conjuntamente como un solo espejo de un diámetro de 10.4 m. El espesor de cada segmento no excede de 8 cm.
+
+Los instrumentos son dispositivos que se acoplan al telescopio para realizar una tarea específica con la luz reflejada por el telescopio. En el caso del instrumento MIRADAS se trata de un espectrógrafo que analiza la luz en el infrarrojo cercano donde el oscurecimiento por el gas y el polvo entre las estrellas no es un gran problema. Es un instrumento multi-objeto con una resolución espectral R = 20.000 en el rango de 1-2.5 $\mu$m. Su capacidad de multiplexación para observar varios objetos al mismo tiempo y la alta resolución espectral que se puede alcanzar determinan el atractivo de este instrumento.
+
+El panel de estado de un instrumento representa cómo el haz de luz se ve afectado por la configuración actual del instrumento (elementos opto-mecánicos) hasta llegar al detector, así como el estado actual de la observación, si la hubiera. Esto permite a los astrónomos y operarios del telescopio visualizar la siguiente información: la trayectoria del haz de luz a través de los distintos elementos opto-mecánicos hasta llegar a su detector, el estado actual de los elementos opto-mecánicos y el progreso de la observación actual.
+
+El software de control de MIRADAS sigue los estándares software y hardware definidos por el telescopio para permitir su integración en el sistema de control de GTC (GCS). GCS es un entorno distribuido orientado a objetos en C++, Python y Java, que ejecuta los múltiples componentes y servicios de los que está compuesto en diferentes máquinas, y utiliza el middleware CORBA para comunicarse entre ellos.
